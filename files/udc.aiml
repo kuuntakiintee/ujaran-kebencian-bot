@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+<category>
+  <pattern>HI</pattern>
+  <template>
+    <random>
+      <li>Halo! Saya UDC-Bot buatan Hans Santoso. Ada yang ingin ditanyakan?</li>
+      <li>Hai! Mau bahas dataset, metode, atau hasil penelitian?</li>
+      <li>Selamat datang! Silakan tanya apa pun tentang penelitian ini.</li>
+    </random>
+  </template>
+</category>
+
+<category><pattern>HALO</pattern><template><srai>HI</srai></template></category>
+<category><pattern>HAI</pattern><template><srai>HI</srai></template></category>
+<category><pattern>HELLO</pattern><template><srai>HI</srai></template></category>
+<category><pattern>SELAMAT PAGI</pattern><template><srai>HI</srai></template></category>
+<category><pattern>SELAMAT SIANG</pattern><template><srai>HI</srai></template></category>
+<category><pattern>SELAMAT SORE</pattern><template><srai>HI</srai></template></category>
+<category><pattern>SELAMAT MALAM</pattern><template><srai>HI</srai></template></category>
+
+<category>
+  <pattern>NAMA SAYA *</pattern>
+  <template>Senang berkenalan denganmu, <set name="nama"><star/></set>! Apa yang ingin kamu bahas?</template>
+</category>
+
+<category>
+  <pattern>SIAPA NAMA SAYA</pattern>
+  <template>
+    <condition name="nama">
+      <li value="*">Nama kamu <get name="nama"/>.</li>
+      <li>Kamu belum memberitahu namamu.</li>
+    </condition>
+  </template>
+</category>
+
+<category>
+  <pattern>SIAPA PENULIS PENELITIAN INI</pattern>
+  <template>
+    Penelitian ini ditulis oleh:
+    <br/>• Lekrey Jerel Jacob Laipiopa
+    <br/>• Hans Santoso
+    <br/>• Iqbal Alfaridzi Balman
+  </template>
+</category>
+
+<category><pattern>* PENULIS *</pattern><template><srai>SIAPA PENULIS PENELITIAN INI</srai></template></category>
+<category><pattern>PENULIS *</pattern><template><srai>SIAPA PENULIS PENELITIAN INI</srai></template></category>
+<category><pattern>* AUTHOR *</pattern><template><srai>SIAPA PENULIS PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA JUDUL PENELITIAN INI</pattern>
+  <template>
+    Judul penelitian:
+    <br/><b>"Deteksi Ujaran Kebencian Politik Pada Media Sosial Indonesia Selama Aksi Demonstrasi Berbasis Model Transformer"</b>
+  </template>
+</category>
+
+<category><pattern>* JUDUL *</pattern><template><srai>APA JUDUL PENELITIAN INI</srai></template></category>
+<category><pattern>JUDUL *</pattern><template><srai>APA JUDUL PENELITIAN INI</srai></template></category>
+<category><pattern>* TITLE *</pattern><template><srai>APA JUDUL PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA LATAR BELAKANG PENELITIAN INI</pattern>
+  <template>
+    Latar belakang penelitian: meningkatnya ujaran kebencian politik pada komentar YouTube selama periode demonstrasi. 
+    Deteksinya kompleks karena sering bersifat multi-label.
+  </template>
+</category>
+
+<category><pattern>* LATAR BELAKANG *</pattern><template><srai>APA LATAR BELAKANG PENELITIAN INI</srai></template></category>
+<category><pattern>LATAR *</pattern><template><srai>APA LATAR BELAKANG PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA TUJUAN PENELITIAN INI</pattern>
+  <template>
+    Tujuan: mengusulkan model untuk klasifikasi ujaran kebencian multi-label dengan melakukan fine-tuning pada arsitektur IndoBERT.
+  </template>
+</category>
+
+<category><pattern>* TUJUAN *</pattern><template><srai>APA TUJUAN PENELITIAN INI</srai></template></category>
+<category><pattern>OBJECTIVE *</pattern><template><srai>APA TUJUAN PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA ITU INDOBERT</pattern>
+  <template>
+    IndoBERT adalah model bahasa berbasis arsitektur Transformer yang dilatih menggunakan korpus data masif berbahasa Indonesia.
+  </template>
+</category>
+
+<category><pattern>* INDOBERT *</pattern><template><srai>APA ITU INDOBERT</srai></template></category>
+
+<category>
+  <pattern>APA DATASET YANG DIGUNAKAN DALAM PENELITIAN INI</pattern>
+  <template>
+    Dataset: 12.000 komentar YouTube berbahasa Indonesia terkait video berita aksi demonstrasi. 
+    Dataset ini dilabeli secara manual oleh tiga anotator.
+  </template>
+</category>
+
+<category><pattern>* DATASET *</pattern><template><srai>APA DATASET YANG DIGUNAKAN DALAM PENELITIAN INI</srai></template></category>
+<category><pattern>SUMBER DATA *</pattern><template><srai>APA DATASET YANG DIGUNAKAN DALAM PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA SAJA LABEL YANG DIGUNAKAN DALAM PENELITIAN INI</pattern>
+  <template>
+    Label yang digunakan:
+    <br/>• Pemerintah
+    <br/>• Aparat
+    <br/>• Umum
+    <br/>• Non-Hate
+    <br/>Semua label bersifat multi-label.
+  </template>
+</category>
+
+<category><pattern>* LABEL *</pattern><template><srai>APA SAJA LABEL YANG DIGUNAKAN DALAM PENELITIAN INI</srai></template></category>
+<category><pattern>KATEGORI *</pattern><template><srai>APA SAJA LABEL YANG DIGUNAKAN DALAM PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA TAHAP PRA PEMROSESAN YANG DILAKUKAN</pattern>
+  <template>
+    Tahap pra-pemrosesan:
+    <br/>1. Cleansing
+    <br/>2. Case folding dan normalisasi
+    <br/>3. Tokenisasi
+    <br/>4. Stopword removal
+  </template>
+</category>
+
+<category><pattern>* PREPROCESSING *</pattern><template><srai>APA TAHAP PRA PEMROSESAN YANG DILAKUKAN</srai></template></category>
+<category><pattern>* PRA PROSES *</pattern><template><srai>APA TAHAP PRA PEMROSESAN YANG DILAKUKAN</srai></template></category>
+
+<category>
+  <pattern>BAGAIMANA ARSITEKTUR MODELNYA</pattern>
+  <template>
+    Arsitektur: IndoBERT dengan lapisan klasifikasi tambahan. 
+    Menggunakan fungsi aktivasi Sigmoid untuk multi-label.
+  </template>
+</category>
+
+<category><pattern>* ARSITEKTUR *</pattern><template><srai>BAGAIMANA ARSITEKTUR MODELNYA</srai></template></category>
+
+<category>
+  <pattern>BAGAIMANA PROSES TRAINING</pattern>
+  <template>
+    Proses training:
+    <br/>• Epochs: 3
+    <br/>• Learning Rate: 3e-5
+    <br/>• Batch Size: 16
+    <br/>• Optimizer: AdamW
+    <br/>• Loss: Binary Cross Entropy Loss
+  </template>
+</category>
+
+<category><pattern>* TRAINING *</pattern><template><srai>BAGAIMANA PROSES TRAINING</srai></template></category>
+
+<category>
+  <pattern>BAGAIMANA EVALUASI MODELNYA</pattern>
+  <template>
+    Evaluasi menggunakan:
+    <br/>• F1-Score
+    <br/>• Subset Accuracy
+    <br/>• Hamming Loss
+  </template>
+</category>
+
+<category><pattern>* EVALUASI *</pattern><template><srai>BAGAIMANA EVALUASI MODELNYA</srai></template></category>
+
+<category>
+  <pattern>APA HASIL PENELITIAN INI</pattern>
+  <template>
+    Hasil utama:
+    <br/>• F1-Weighted: 0.8493
+    <br/>• Subset Accuracy: 0.8089
+    <br/>• Hamming Loss: 0.0771
+  </template>
+</category>
+
+<category><pattern>* HASIL *</pattern><template><srai>APA HASIL PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA KELEMAHAN PENELITIAN INI</pattern>
+  <template>
+    Kelemahan: performa rendah pada kategori 'Umum' karena data sedikit dan banyak sarkasme atau ujaran implisit.
+  </template>
+</category>
+
+<category><pattern>* KELEMAHAN *</pattern><template><srai>APA KELEMAHAN PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA SARAN UNTUK PENELITIAN SELANJUTNYA</pattern>
+  <template>
+    Saran:
+    <br/>• Data augmentation
+    <br/>• Focal Loss
+    <br/>• Transfer learning dari deteksi sarkasme
+  </template>
+</category>
+
+<category><pattern>* SARAN *</pattern><template><srai>APA SARAN UNTUK PENELITIAN SELANJUTNYA</srai></template></category>
+
+<category>
+  <pattern>APA KESIMPULAN PENELITIAN INI</pattern>
+  <template>
+    Kesimpulan: IndoBERT efektif untuk klasifikasi ujaran kebencian multi-label, tetapi masih lemah dalam kategori implisit.
+  </template>
+</category>
+
+<category><pattern>* KESIMPULAN *</pattern><template><srai>APA KESIMPULAN PENELITIAN INI</srai></template></category>
+
+<category>
+  <pattern>APA ITU UJARAN KEBENCIAN</pattern>
+  <template>
+    Ujaran kebencian adalah pernyataan yang menyerang, merendahkan, atau memusuhi individu atau kelompok tertentu.
+  </template>
+</category>
+
+<category>
+  <pattern>APA ITU MULTI LABEL</pattern>
+  <template>Multi-label adalah klasifikasi di mana satu komentar dapat memiliki lebih dari satu label.</template>
+</category>
+<category><pattern>APA ITU MULTI-LABEL</pattern><template><srai>APA ITU MULTI LABEL</srai></template></category>
+<category><pattern>APA ITU MULTILABEL</pattern><template><srai>APA ITU MULTI LABEL</srai></template></category>
+<category><pattern>* MULTI LABEL *</pattern><template><srai>APA ITU MULTI LABEL</srai></template></category>
+<category><pattern>* MULTI-LABEL *</pattern><template><srai>APA ITU MULTI LABEL</srai></template></category>
+<category><pattern>* MULTILABEL *</pattern><template><srai>APA ITU MULTI LABEL</srai></template></category>
+
+<category>
+  <pattern>*</pattern>
+  <template>
+    Maaf, saya belum mengerti pertanyaannya. Contoh pertanyaan yang bisa kamu tanyakan:
+    <br/>• Apa tujuan penelitian ini?
+    <br/>• Apa dataset yang digunakan?
+    <br/>• Bagaimana preprocessing dilakukan?
+    <br/>• Bagaimana arsitektur model?
+    <br/>• Bagaimana proses training?
+    <br/>• Bagaimana evaluasi modelnya?
+    <br/>• Apa hasil penelitian?
+    <br/>• Apa kelemahan penelitian ini?
+    <br/>• Apa saran penelitian selanjutnya?
+    <br/>• Apa kesimpulan penelitian ini?
+    <br/>• Apa itu IndoBERT?
+    <br/>• Apa itu multi-label?
+    <br/>• Apa itu ujaran kebencian?
+  </template>
+</category>
+
+</aiml>
